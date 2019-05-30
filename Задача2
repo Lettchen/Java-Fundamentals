@@ -1,0 +1,23 @@
+/*Даны натуральные числа М и N. Вывести старшую цифру дробной части и младшую
+цифру целой части числа M/N.
+*/
+package Functional;
+import java.util.Scanner;
+
+public class Ciffer {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int M = scanner.nextInt();
+        int N = scanner.nextInt();
+        if (M<0 || N<0){
+            System.out.println("Число ненатуральное. Введите корректное число");
+        }
+        int r;
+        System.out.println((double) M / (double) N);
+        r = M%N*10/N;
+        System.out.println(r);
+        r = M/N%10;
+        System.out.println(r);
+    }
+
+}
