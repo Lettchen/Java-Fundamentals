@@ -1,0 +1,19 @@
+package Functional;
+/*Дано натуральное число Т, которое представляет длительность прошедшего времени в
+секундах. Вывести данное значение длительности в часах, минутах и секундах в следующей
+форме:
+ННч ММмин SSc.*/
+
+import java.util.Scanner;
+
+public class Hours {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int time = scanner.nextInt();
+        int SS = time%60; //секунды
+        int MM = time/60; //минуты
+        int HH = MM/60; //часы
+        MM = MM%60;
+        System.out.println(HH + ":" + MM + ":" + SS);
+    }
+}
