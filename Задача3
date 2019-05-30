@@ -1,0 +1,25 @@
+/*Вводится натуральное число. Найти сумму четных цифр, входящих в его состав.
+Преобразовать его в другое число, цифры которого будут следовать в обратном порядке по
+сравнению с введенным числом.
+*/
+package Functional;
+
+import java.util.Scanner;
+
+public class Chislo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        int s = 0, d , y = 0;
+
+        for (int i = x; i > 0; i = i/10) {
+            d = i % 10;
+            if ( d%2 == 0) s += d;
+            // вторая часть
+            y = y * 10 + d;
+        }
+        System.out.println(s);
+        System.out.println(y);
+    }
+}
+
