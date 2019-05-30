@@ -1,0 +1,19 @@
+/*Напишите программу, где пользователь вводит любое целое положительное число. А
+программа суммирует все числа от 1 до введенного пользователем числа.
+*/
+package Functional;
+
+import java.util.Scanner;
+
+public class Summa2 {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        int i;
+        int sum = 0;
+        for(i=1; i<=x; i++){
+            sum = sum +i;
+        }
+        System.out.println(sum);
+    }
+}
