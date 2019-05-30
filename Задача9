@@ -1,0 +1,21 @@
+/*Написать программу, которая по заданным трем числам определяет, является ли сумма
+каких-либо двух из них положительной.
+*/
+package Functional;
+
+import java.util.Scanner;
+
+public class summa {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+        if (a + b > 0 || b + c > 0 || a + c > 0) {
+            System.out.println("Сумма положительна");
+        } else {
+            System.out.println("Сумма отрицательна");
+        }
+
+    }
+}
