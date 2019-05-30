@@ -1,0 +1,24 @@
+/*Перераспределить значения переменных х и у так, чтобы в х оказалось большее из этих
+значений, а в y - меньшее.
+*/
+package Functional;
+import java.util.Scanner;
+
+public class MaxMin {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        if(x<y){
+            int temp = x;
+            x = y;
+            y = temp;
+            System.out.println("x=" +x +", y=" +y);
+
+        }
+        else{
+            System.out.println("x=" +x +"y=" +y);
+        }
+
+    }
+}
