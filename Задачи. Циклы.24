@@ -2,7 +2,7 @@
 Преобразовать его в другое число, цифры которого будут следовать в обратном порядке по
 сравнению с введенным числом.
 */
-package Functional;
+package by.htp.hw.functional;
 
 import java.util.Scanner;
 
