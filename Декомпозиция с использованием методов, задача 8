@@ -2,7 +2,7 @@
 (вывести на печать число, которое меньше максимального элемента массива, но больше
 всех других элементов).
 */
-package Functional;
+package by.htp.hw.functional;
 
 public class massiv {
     public static void main(String[] args){
