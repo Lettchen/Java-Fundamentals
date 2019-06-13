@@ -1,7 +1,8 @@
 /*Даны натуральные числа М и N. Вывести старшую цифру дробной части и младшую
 цифру целой части числа M/N.
 */
-package Functional;
+package by.htp.hw.functional;
+
 import java.util.Scanner;
 
 public class Ciffer {
