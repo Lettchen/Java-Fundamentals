@@ -2,7 +2,7 @@
 число. Если таких чисел несколько, то определить наименьшее из них.
 */
 
-package Functional;
+package by.htp.hw.funcional;
 
 public class massive_numbers {
     public static void main(String[] args){
