@@ -1,7 +1,7 @@
 /*Перераспределить значения переменных х и у так, чтобы в х оказалось большее из этих
 значений, а в y - меньшее.
 */
-package Functional;
+package by.htp.hw.functional;
 import java.util.Scanner;
 
 public class MaxMin {
