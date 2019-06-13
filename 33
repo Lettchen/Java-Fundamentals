@@ -1,5 +1,7 @@
 /*Найдите наибольшую цифру данного натурального числа.*/
-package Functional;
+
+package by.htp.hw.functional;
+
 import java.util.Scanner;
 public class Chislo2 {
     public static void main(String[] args) {
