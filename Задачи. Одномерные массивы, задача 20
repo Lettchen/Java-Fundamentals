@@ -2,7 +2,7 @@
 каждый второй элемент (освободившиеся элементы заполнить нулями). Примечание.
 Дополнительный массив не использовать.
 */
-package Functional;
+package by.htp.hw.functional;
 
 public class massiv2 {
     public static void main(String[] args) {
