@@ -1,0 +1,42 @@
+/*Даны три действительных числа. Возвести в квадрат те из них, значения которых неотрицательны, и в четвертую степень — отрицательные.*/
+package by.htp.hw.functional;
+import java.util.Scanner;
+
+public class Number {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        double c = sc.nextDouble();
+
+        if (a>0){
+            a=Math.pow(a,2);
+        }
+        else if  (a==0){
+            System.out.println("исло равно нулю");
+        }
+        else{
+            a=Math.pow(a,4);
+        }
+
+        if (b>0){
+            b=Math.pow(b,2);
+        }
+        else if  (b==0){
+            System.out.println("Число равно нулю");
+        }
+        else{
+            b=Math.pow(b,4);
+        }
+
+        if (c>0){
+            c=Math.pow(c,2);
+        }
+        else if  (c==0){
+            System.out.println("Число равно нулю");
+        }
+        else{
+            c=Math.pow(c,4);
+        }
+    }
+}
