@@ -1,0 +1,22 @@
+/*Даны целые числа m, n. Если числа не равны, то заменить каждое из них одним и тем же числом, равным большему из
+исходных, а если равны, то заменить числа нулями.*/
+package by.htp.hw.functional;
+import java.util.Scanner;
+
+public class Interchange {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        if(m!=n){
+            m = Math.max(m, n);
+            n = Math.max(m, n);
+            System.out.println(m +","+n);
+        }
+        else if(m==n){
+            m=0;
+            n=0;
+            System.out.println(m +","+n);
+        }
+    }
+}
