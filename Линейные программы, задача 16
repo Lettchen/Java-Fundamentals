@@ -1,0 +1,19 @@
+/*Найти произведение цифр заданного четырехзначного числа.*/
+
+package by.htp.hw.functional;
+import java.util.Scanner;
+
+public class Intersection {
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int tys =x/1000;
+        x=x%1000;
+        int sot = x/100;
+        x=x%100;
+        int des = x/10;
+        x=x%10;
+        int intersec = tys*sot*des*x;
+        System.out.println(intersec);
+    }
+}
