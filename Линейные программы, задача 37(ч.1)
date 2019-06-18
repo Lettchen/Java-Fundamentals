@@ -1,0 +1,73 @@
+/*Составить линейную программу, печатающую значение true, если указанное высказывание является истинным, и false — в противном случае:
+• Целое число N является четным двузначным числом.
+• Сумма двух первых цифр заданного четырехзначного числа равна сумме двух его последних цифр.
+• Сумма цифр данного трехзначного числа N является четным числом.
+• Квадрат заданного трехзначного числа равен кубу суммы цифр этого числа.
+• Сумма каких-либо двух цифр заданного трехзначного натурального числа N равна третьей цифре.
+
+
+package by.htp.hw.functional;
+import java.util.Scanner;
+public class Ciffer {
+    public static void main (String [] args){
+        boolean a;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите значение n");
+        int n = sc.nextInt();
+
+        if(n%2==0 && n<100 && n> -100){ //Целое число N является четным двузначным числом.
+            a=true;
+            System.out.println(a);
+        }
+        else{
+            a=false;
+            System.out.println(a);
+        }
+
+        int tys =n/1000;    //Сумма двух первых цифр заданного четырехзначного числа равна сумме двух его последних цифр.
+        int temp=n%1000;
+        int sot=temp/100;
+        temp=temp%100;
+        int des=temp/10;
+        temp=temp%10;
+        if(tys+sot == des+temp){
+            a=true;
+            System.out.println(a);
+        }
+        else{
+            a=false;
+            System.out.println(a);
+        }
+
+        if((sot+des+temp)%2==0){ //Сумма цифр данного трехзначного числа N является четным числом.
+            a=true;
+            System.out.println(a);
+        }
+        else{
+            a=false;
+            System.out.println(a);
+        }
+
+        if(tys==0 && n*n==Math.pow((sot+des+temp), 3)) {   //Квадрат заданного трехзначного числа равен кубу суммы цифр этого числа.
+            a=true;
+            System.out.println(a);
+        }
+        else{
+            a=false;
+            System.out.println(a);
+        }
+
+        if(tys==0 && (sot+des==temp||des+temp==sot||sot+temp==des)){ //Сумма каких-либо двух цифр заданного трехзначного натурального числа N равна третьей цифре.
+            a=true;
+            System.out.println(a);
+        }
+        else{
+            a=false;
+            System.out.println(a);
+        }
+
+
+
+
+    }
+}
