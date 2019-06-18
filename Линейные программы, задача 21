@@ -1,0 +1,18 @@
+/*Дано действительное число R вида nnn.ddd (три цифровых разряда в дробной и целой частях).
+Поменять местами дробную и целую части числа и вывести полученное значение числа.*/
+
+package by.htp.hw.functional;
+import java.util.Scanner;
+
+public class Change {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double x = sc.nextDouble();
+        int iPart;
+        double fPart;
+        iPart = (int) x;
+        fPart = (x - iPart)*1000;
+        System.out.println((int)fPart +"."+iPart);
+
+    }
+}
