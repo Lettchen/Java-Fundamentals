@@ -1,0 +1,25 @@
+/*Составить программу, которая определит площадь какого круга меньше.*/
+package by.htp.hw.functional;
+import java.util.Scanner;
+
+public class CircleSquare {
+    public static void main(String [] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Введите радиус певрого круга");
+    double r1= sc.nextInt();
+    System.out.println("Введите радиус второго круга");
+    double r2= sc.nextInt();
+    double s1=Math.PI*Math.pow(r1, 2);
+    double s2=Math.PI*Math.pow(r2, 2);
+    if(s1>s2){
+        System.out.println("Площадь второго круга меньше");
+    }
+    else if(s1<s2){
+        System.out.println("Площадь первого круга меньше");
+    }
+    else{
+        System.out.println("Площади равны");
+    }
+
+    }
+}
