@@ -1,0 +1,51 @@
+/*Даны натуральные числа К и N. Написать метод(методы) формирования массива А,
+элементами которого являются числа, сумма цифр которых равна К и которые не большее
+N.*/
+
+package by.htp.hw.decomposition;
+
+import java.util.Scanner;
+
+public class MassA {
+    int k;
+    int n;
+    int sum;
+    int j;
+
+    public static void main(String[] args) {
+        MassA m = new MassA();
+        m.tipp();
+        m.addArray();
+
+    }
+
+    public void tipp() {
+        Scanner sc = new Scanner(System.in);
+        k = sc.nextInt();
+        n = sc.nextInt();
+    }
+
+    public void addArray() {
+        int [] a;
+        for (int i = 10; i < n; i++) {//число от 10 до n
+            int x = i;
+            sum = 0;
+            while (x != 0) {   //сумма цифр числа
+                sum += x % 10;
+                x /= 10;
+            }
+            System.out.println("Сумма цифр в числе " + i + " = " + sum);
+            if (sum == k) { //проверка, равна ли сумма k
+             /* ?????*/
+            }
+        }
+
+    }
+    
+
+
+}
+
+
+
+
