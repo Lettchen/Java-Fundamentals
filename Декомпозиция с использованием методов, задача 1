@@ -1,0 +1,37 @@
+/*Треугольник задан координатами своих вершин. Написать метод для вычисления его
+площади.*/
+
+package by.htp.hw.decomposition;
+
+public class TreangleSqr {
+    double x1=2;
+    double y1=1;
+    double x2=5;
+    double y2=4;
+    double x3=6;
+    double y3=2;
+    double a;
+    double b;
+    double c;
+
+    public static void main(String [] args){
+    TreangleSqr ts= new TreangleSqr();
+    ts.side();
+    ts.sq();
+    }
+
+    public void side(){
+        a = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+        b =Math.sqrt((x3-x2)*(x3-x2) +(y3-y2)*(y3-y2));
+        c = Math.sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3));
+        System.out.println(a+ " "+b+" "+c);
+    }
+
+    public void sq(){
+        double p=a+b+c;
+        double pl = p/2;
+        double s = Math.sqrt(pl*(pl-a)*(pl-b)*(pl-c));
+        System.out.println(s);
+    }
+    
+}
