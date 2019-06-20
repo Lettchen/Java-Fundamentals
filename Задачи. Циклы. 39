@@ -1,0 +1,15 @@
+/*В трехзначном числе зачеркнули старшую цифру. Когда полученное число умножили на 7, то получили исходное число. Найти это число.*/
+
+package by.htp.hw.functional;
+
+public class Cif {
+    public static void main(String[] args){
+        for(int i =100; i<1000; i++){
+            int x=i%100*7;
+            if (x==i){
+                System.out.println(i);
+            }
+        }
+
+    }
+}
