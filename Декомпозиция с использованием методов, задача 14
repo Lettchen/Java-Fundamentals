@@ -1,0 +1,37 @@
+/*Написать метод(методы), определяющий, в каком из данных двух чисел больше цифр.*/
+package by.htp.hw.decomposition;
+
+import java.util.Scanner;
+
+public class MoreCiffer {
+    Scanner sc = new Scanner(System.in);
+    int a;
+    int b;
+
+    public static void main(String[] args) {
+        MoreCiffer mc = new MoreCiffer();
+        mc.compareCiffer();
+
+    }
+    
+
+    public void compareCiffer() {
+        int k=0;
+        int l=0;
+        for ( a = sc.nextInt(); a > 0; a = a / 10) {
+        k++;
+        }
+        for (b = sc.nextInt(); b > 0; b = b / 10) {
+            l++;
+        }
+        if (k>l){
+            System.out.println("В первом числе цифр больше");
+        }
+        else if(k==l){
+            System.out.println("Одинаковое количество цифр");
+        }
+        else{
+            System.out.println("Во втором числе цифр больше");
+        }
+    }
+}
