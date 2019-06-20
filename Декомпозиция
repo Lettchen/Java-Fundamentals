@@ -10,7 +10,6 @@ public class MassA {
     int k;
     int n;
     int sum;
-    int j;
 
     public static void main(String[] args) {
         MassA m = new MassA();
@@ -26,26 +25,21 @@ public class MassA {
     }
 
     public void addArray() {
-        int [] a;
+        int [] a = new int[];
         for (int i = 10; i < n; i++) {//число от 10 до n
             int x = i;
             sum = 0;
             while (x != 0) {   //сумма цифр числа
-                sum += x % 10;
-                x /= 10;
+                sum = sum + x % 10;
+                x =x/ 10;
             }
             System.out.println("Сумма цифр в числе " + i + " = " + sum);
-            if (sum == k) { //проверка, равна ли сумма k
-             /* ?????*/
-            }
+
         }
 
     }
-    
-
 
 }
-
 
 
 
