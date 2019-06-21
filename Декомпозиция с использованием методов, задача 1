@@ -4,34 +4,73 @@
 package by.htp.hw.decomposition;
 
 public class TreangleSqr {
-    double x1=2;
-    double y1=1;
-    double x2=5;
-    double y2=4;
-    double x3=6;
-    double y3=2;
-    double a;
-    double b;
-    double c;
 
-    public static void main(String [] args){
-    TreangleSqr ts= new TreangleSqr();
-    ts.side();
-    ts.sq();
+    public static void main(String[] args) {
+        TreangleSqr ts = new TreangleSqr();
+        ts.addPointFirstX();
+        ts.addPointFirstY();
+        ts.addPointSecX();
+        ts.addPointSecY();
+        ts.addPointThirdX();
+        ts.addPointThirdY();
+        ts.sideA();
+        ts.sideB();
+        ts.sideC();
+        ts.sq();
     }
 
-    public void side(){
-        a = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
-        b =Math.sqrt((x3-x2)*(x3-x2) +(y3-y2)*(y3-y2));
-        c = Math.sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3));
-        System.out.println(a+ " "+b+" "+c);
+
+    public double addPointFirstX() {
+        double x1 = 2;
+        return x1;
     }
 
-    public void sq(){
-        double p=a+b+c;
-        double pl = p/2;
-        double s = Math.sqrt(pl*(pl-a)*(pl-b)*(pl-c));
+    public double addPointFirstY() {
+        double y1 = 1;
+        return y1;
+    }
+
+    public double addPointSecX() {
+        double x2 = 5;
+        return x2;
+    }
+
+    public double addPointSecY() {
+        double y2 = 4;
+        return y2;
+    }
+
+    public double addPointThirdX() {
+        double x3 = 6;
+        return x3;
+    }
+
+    public double addPointThirdY() {
+        double y3 = 2;
+        return y3;
+    }
+
+
+    public double sideA() {
+        double a = Math.sqrt((addPointSecX() - addPointFirstX()) * (addPointSecX() - addPointFirstX()) + (addPointSecY() - addPointFirstY()) * (addPointSecY() - addPointFirstY()));
+        return a;
+    }
+
+    public double sideB() {
+        double b = Math.sqrt((addPointThirdX() - addPointSecX()) * (addPointThirdX() - addPointSecX()) + (addPointThirdY() - addPointSecY()) * (addPointThirdY() - addPointSecY()));
+        return b;
+    }
+
+    public double sideC() {
+        double c = Math.sqrt((addPointFirstX() - addPointThirdX()) * (addPointFirstX() - addPointThirdX()) + (addPointFirstY() - addPointThirdY()) * (addPointFirstY() - addPointThirdY()));
+        return c;
+    }
+
+    public void sq() {
+        double p = sideA() + sideB() + sideC();
+        double pl = p / 2;
+        double s = Math.sqrt(pl * (pl - sideA()) * (pl - sideB()) * (pl - sideC()));
         System.out.println(s);
     }
-    
+
 }
