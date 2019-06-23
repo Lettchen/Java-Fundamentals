@@ -2,22 +2,27 @@
 (вывести на печать число, которое меньше максимального элемента массива, но больше
 всех других элементов).
 */
-package Functional;
+package by.htp.hw.functional;
 
 public class massiv {
-    int[] A = new int [] {10, 20, 12, 13, 14, 45, 16, 30, 17, 19};
-    int a = A[0]; //переменная для хранения значение
-    int m = A[0]; //max
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        int[] A = new int[]{10, 20, 12, 13, 14, 45, 16, 30, 17, 19};
         massiv ms = new massiv();
-        ms.sort();
-    }
-    public void sort(){
-        for (int i = 1; i < A.length; i++){
-            if ( m < A[i] ) m = A[i];
-            if ( a < A[i] && A[i] < m ) a = A[i];
-        }
+        int a = ms.sort(A);
         System.out.println(a);
     }
-}
 
+    public int sort(int[] A) {
+        int a = A[0]; //переменная для хранения значение
+        int m = A[0]; //max
+        for (int i = 1; i < A.length; i++) {
+            if (m < A[i]) {
+                m = A[i];
+            }
+            if (a < A[i] && A[i] < m) {
+                a = A[i];
+            }
+        }
+        return a;
+    }
+}
