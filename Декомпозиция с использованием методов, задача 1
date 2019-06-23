@@ -1,76 +1,59 @@
 /*Треугольник задан координатами своих вершин. Написать метод для вычисления его
 площади.*/
 
-package by.htp.hw.decomposition;
-
+package by.htp.hw.functional;
+import java.util.Random;
 public class TreangleSqr {
-
     public static void main(String[] args) {
         TreangleSqr ts = new TreangleSqr();
-        ts.addPointFirstX();
-        ts.addPointFirstY();
-        ts.addPointSecX();
-        ts.addPointSecY();
-        ts.addPointThirdX();
-        ts.addPointThirdY();
-        ts.sideA();
-        ts.sideB();
-        ts.sideC();
-        ts.sq();
+
+        double x1, y1;
+        double x2, y2;
+        double x3, y3;
+
+        double sideA, sideB, sideC;
+
+        double square;
+
+        x1 = ts.enterNumber();
+        y1 = ts.enterNumber();
+
+        x2 = ts.enterNumber();
+        y2 = ts.enterNumber();
+
+        x3 = ts.enterNumber();
+        y3 = ts.enterNumber();
+
+        sideA = ts.side(x1, y1, x2, y2);
+        sideB = ts.side(x1, y1, x3, y3);
+        sideC = ts.side(x2, y2, x3, y3);
+
+        square = ts.sq(sideA, sideB, sideC);
+
     }
 
 
-    public double addPointFirstX() {
-        double x1 = 2;
-        return x1;
-    }
 
-    public double addPointFirstY() {
-        double y1 = 1;
-        return y1;
-    }
-
-    public double addPointSecX() {
-        double x2 = 5;
-        return x2;
-    }
-
-    public double addPointSecY() {
-        double y2 = 4;
-        return y2;
-    }
-
-    public double addPointThirdX() {
-        double x3 = 6;
-        return x3;
-    }
-
-    public double addPointThirdY() {
-        double y3 = 2;
-        return y3;
+    public double enterNumber() {
+        Random rand = new Random();
+        double x = rand.nextDouble();
+        return x;
     }
 
 
-    public double sideA() {
-        double a = Math.sqrt((addPointSecX() - addPointFirstX()) * (addPointSecX() - addPointFirstX()) + (addPointSecY() - addPointFirstY()) * (addPointSecY() - addPointFirstY()));
+    public double side(double x1, double y1, double x2, double y2) {
+        double a = Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
         return a;
     }
 
-    public double sideB() {
-        double b = Math.sqrt((addPointThirdX() - addPointSecX()) * (addPointThirdX() - addPointSecX()) + (addPointThirdY() - addPointSecY()) * (addPointThirdY() - addPointSecY()));
-        return b;
-    }
 
-    public double sideC() {
-        double c = Math.sqrt((addPointFirstX() - addPointThirdX()) * (addPointFirstX() - addPointThirdX()) + (addPointFirstY() - addPointThirdY()) * (addPointFirstY() - addPointThirdY()));
-        return c;
-    }
 
-    public void sq() {
-        double p = sideA() + sideB() + sideC();
+    public double sq(double a, double b, double c) {
+        double p = a + b + c;
         double pl = p / 2;
-        double s = Math.sqrt(pl * (pl - sideA()) * (pl - sideB()) * (pl - sideC()));
-        System.out.println(s);
+        double s = Math.sqrt(pl * (pl - a) * (pl - b) * (pl - c));
+
+        return s;
     }
 
 }
