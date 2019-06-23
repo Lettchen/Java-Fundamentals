@@ -1,0 +1,66 @@
+/*Даны натуральные числа К и N. Написать метод(методы) формирования массива А,
+элементами которого являются числа, сумма цифр которых равна К и которые не большее
+N.*/
+
+package by.htp.hw.decomposition;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MassA {
+
+    public static void main(String[] args) {
+        MassA m = new MassA();
+
+        int k;
+        int n;
+        int c; //количество эленентов на которое нужно создать массив
+        int[] array;
+
+        k = m.tipp();
+        n = m.tipp();
+        c = m.countNumbers(k, n);
+        array = new int[c];
+        m.fillArray(k, n, array);
+
+        System.out.println(Arrays.toString(array));
+    }
+
+    public int tipp() {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        return x;
+    }
+
+    public int sumDigits(int x) { //сумма цифр числа
+        int sum = 0;
+        while (x != 0) {
+            sum = sum + x % 10;
+            x = x / 10;
+        }
+        return sum;
+    }
+
+    public int countNumbers(int k, int n) {
+        int cnt = 0; //количество чисел, подходящих по условию задачи
+        for (int ciffer = 0; ciffer < n; ciffer++) { //число от 0 до n
+            if (sumDigits(ciffer) == k) {
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+
+    public void fillArray(int k, int n, int[] array) {
+        int j = 0; //номер ячейки массива
+        for (int ciffer = 0; ciffer < n; ciffer++) { //число от 0 до n
+            if (sumDigits(ciffer) == k) {
+                array[j] = ciffer;
+                j++;
+            }
+        }
+    }
+}
+
+
+
