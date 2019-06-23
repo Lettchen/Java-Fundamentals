@@ -11,11 +11,16 @@ public class MoreCiffer {
         MoreCiffer mc = new MoreCiffer();
         int a;
         int b;
+        int k; //количество цифр первого числа
+        int n; //количество цифр второго числа
         a = mc.tippCiffer();
         b = mc.tippCiffer();
-        mc.compareCiffer(a, b);
+        k = mc.countCiffer(a);
+        n = mc.countCiffer(b);
+        mc.compareCiffer(k, n);
 
     }
+
 
     public int tippCiffer(){
         Scanner sc = new Scanner(System.in);
@@ -23,20 +28,20 @@ public class MoreCiffer {
         return x;
     }
 
+    public int countCiffer(int a){
+        int counter=0;
+        for (; a > 0; a = a / 10) {
+            counter++;
+        }
+        return counter;
+    }
 
-    public void compareCiffer(int x, int y) {
-        int k=0;
-        int l=0;
-        for ( x = x; x > 0; x = x / 10) {
-            k++;
-        }
-        for (y = y; y > 0; y = y / 10) {
-            l++;
-        }
-        if (k>l){
+
+    public void compareCiffer(int k, int n) {
+        if (k>n){
             System.out.println("В первом числе цифр больше");
         }
-        else if(k==l){
+        else if(k==n){
             System.out.println("Одинаковое количество цифр");
         }
         else{
