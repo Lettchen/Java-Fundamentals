@@ -1,0 +1,43 @@
+/*Написать метод(методы) для нахождения суммы большего и меньшего из трех чисел.*/
+package by.htp.hw.decomposition;
+
+import java.util.Scanner;
+
+public class SumDigit {
+    public static void main(String[] args) {
+        SumDigit sd = new SumDigit();
+        int a = sd.setDigit();
+        int b = sd.setDigit();
+        int c = sd.setDigit();
+        int maxDig = sd.maxDigit(a,b,c);
+        int minDig = sd.minDigit(a,b,c);
+        int sum = sd.sumMaxMin(maxDig, minDig);
+        System.out.println(sum);
+    }
+
+    public int setDigit() {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        return x;
+    }
+
+    public int maxDigit(int a, int b, int c) {
+        int x;
+        x= Math.max(a,b);
+        x = Math.max(x, c);
+        return x;
+    }
+
+    public int minDigit(int a, int b, int c){
+        int x;
+        x = Math.min(a, b);
+        x = Math.min(x, c);
+        return x;
+    }
+
+    public int sumMaxMin(int maxDig, int minDig){
+        int sum= maxDig+minDig;
+        return sum;
+    }
+
+}
