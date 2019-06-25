@@ -1,0 +1,55 @@
+/*Задан массив D. Определить следующие суммы: D[l] + D[2] + D[3]; D[3] + D[4] + D[5];
+D[4] +D[5] +D[6].
+Пояснение. Составить метод(методы) для вычисления суммы трех последовательно
+расположенных элементов массива с номерами от k до m.*/
+
+package by.htp.hw.decomposition;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
+
+public class SumMas {
+    public static void main (String [] args){
+        SumMas obj = new SumMas();
+        int k = obj.tipp();
+        int m = obj.tipp();
+        int [] d = new int[15];
+        obj.fillArray(d);
+        System.out.println(Arrays.toString(d));
+        obj.sum(k,m,d);
+    }
+
+    public int tipp() {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        return x;
+    }
+
+    public void fillArray(int [] d){
+        Random rand = new Random();
+        for(int i =0; i<d.length; i++) {
+            d[i] = rand.nextInt(12);
+        }
+    }
+
+    public int countSum(int k, int m, int [] d){
+        int sum =0;
+        int count = 0;
+        int i=k;
+            for (; i <= m; i++) {
+                sum = sum + d[i];
+                count = count + 1;
+                if (count == 3) {
+                    break;
+                }
+            }
+            return sum;
+    }
+
+    public void sum(int k, int m, int [] d){
+        for(;k<m;k=k+2){
+            System.out.println(countSum(k,m,d));
+        }
+    }
+
+}
